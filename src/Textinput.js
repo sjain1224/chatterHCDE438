@@ -18,7 +18,7 @@ function TextInput(props) {
 
     return <footer className="text-input">
         <input 
-            placeholder="Write your message"
+            placeholder="Let's Chat!"
             value={text}
             onChange={e=> setText(e.target.value)}
             onKeyPress={keyPressed}
@@ -27,7 +27,7 @@ function TextInput(props) {
         <button
             className ="send-btn" 
             onClick={sendMessage} disabled={!text}>
-            SEND
+            ↑
         </button>
     </footer>
 }
