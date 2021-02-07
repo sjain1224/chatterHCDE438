@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import { GrCheckmark } from 'react-icons/gr';
+import { BiEdit } from 'react-icons/bi';
 
 function NamePicker() {
     const [showInput, setShowInput] = useState(false)
@@ -6,20 +8,28 @@ function NamePicker() {
 
     if (showInput) {
         return <div className="name-picker">
-            <input value={username}
+
+            <input className="input-name"
+                value={username}
                 onChange={e=> setUsername(e.target.value)}
             />
-            <button onClick={()=>setShowInput(false)}>
+
+            <button className="submit-name"
+                onClick={()=>setShowInput(false)} disabled={!username}>
                 OK
             </button>
         </div>
     }
 
     return <div className="name-picker">
-        <div>{username}</div>
-        <button onClick={()=>setShowInput(true)}>
-            EDIT
+        <div className="users-name">{username}</div>
+
+        <button className="edit-name"
+            onClick={()=>setShowInput(true)}>
+            <BiEdit color="white" title="edit"
+                style={{minWidth:'1rem', marginRight:1}} />
         </button>
+
     </div>
 }
 

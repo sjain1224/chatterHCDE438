@@ -19,6 +19,7 @@
   font-size:1.2rem;
   color:white;
   font-weight: bold;
+  position: relative;
 }
 .logo{
   height:1.8rem;
@@ -93,4 +94,57 @@
   display: inline-block;
   padding: .25rem .75rem;
   text-align: left;
+}
+
+.name-picker{
+  position: absolute;
+  top: .55rem;
+  right: .75rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 12rem;
+}
+
+.users-name{
+  font-size: 1rem;
+  font-weight: 400;
+  margin-right: .25rem;
+}
+
+.edit-name{
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+}
+
+.input-name{
+  margin-right: .5rem;
+  outline: none;
+  color: white;
+  background-color: black;
+  width: 100%;
+  border-radius: .9rem;
+  border: .25px solid white;
+  padding-left: 6px;
+  height: 1.2rem;
+  border-radius: .7rem;
+}
+
+.submit-name{
+  background-color: transparent;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 1px solid white;
+}
+
+.submit-name[disabled]{
+  color: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.2);
 }
