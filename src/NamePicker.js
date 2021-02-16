@@ -1,10 +1,15 @@
 import { useState } from 'react';
-import { GrCheckmark } from 'react-icons/gr';
 import { BiEdit } from 'react-icons/bi';
 
-function NamePicker() {
+function NamePicker(props) {
     const [showInput, setShowInput] = useState(false)
-    const [username, setUsername] = useState('')
+    const [username, setUsername] = useState(localStorage.getItem('username') || '')
+
+    function save(){
+        props.saveName(username)
+        setShowInput(false)
+        localStorage.setItem('username', username)
+    }
 
     if (showInput) {
         return <div className="name-picker">
@@ -15,7 +20,7 @@ function NamePicker() {
             />
 
             <button className="submit-name"
-                onClick={()=>setShowInput(false)} disabled={!username}>
+                onClick={save} disabled={!username}>
                 OK
             </button>
         </div>
